@@ -13,7 +13,6 @@ public final class JRunMeta
 {
     private static final String RESOURCE = "/jrunner.properties";
     private static Properties instance = null;
-
     public static Properties instance()
     {
         synchronized(JRunMeta.class)
