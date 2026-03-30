@@ -14,6 +14,28 @@ import java.util.Properties;
 public class ResourceLoader
 {
 
+    public static void CopyFile(String subpath, Path dest) throws IOException
+    {
+        CopyFile(null, subpath, dest);
+    }
+    public static void CopyFile(Class<?> anchor, String subpath, Path dest) throws IOException
+    {
+        CopyFileNear(anchor, subpath, dest);
+    }
+
+
+    public static void CopyFileNear(Class<?> anchor, String subpath, Path dest) throws IOException
+    {
+        byte[] contents = ReadFileNear(anchor, subpath);
+
+        Path parent = dest.getParent();
+        if( !Files.exists(parent) )
+            Files.createDirectories(parent);
+
+        Files.write(dest, contents);
+    }
+
+
     public static byte[] ReadFile(String subpath) throws IOException
     { return ReadFileNear(null, subpath); }
 

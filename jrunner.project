@@ -1,9 +1,3 @@
 {
-    "name": "ramar/lib/jrun",
-    "dependencies": {
-        "disk": {
-            "ramar/lib/json": "ramar_json.jar",
-            "ramar/lib/iter": "ramar_iter.jar"
-        }
-    }
+    "name": "ramar/lib/jrun"
 }
